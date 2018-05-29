@@ -159,7 +159,7 @@ cdvPluginPostBuildExtras.add({
 
     dependencies {
 //        implementation 'org.xwalk:xwalk_core_library:23.53.589.4' //xwalkSpec
-//        implementation 'org.xwalk:xwalk_core_library:22.52.561.4' //xwalkSpec
+        implementation 'org.xwalk:xwalk_core_library:22.52.561.4' //xwalkSpec
     }
 
     if (file('assets/xwalk-command-line').exists()) {
