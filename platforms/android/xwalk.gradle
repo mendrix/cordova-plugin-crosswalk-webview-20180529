@@ -157,6 +157,22 @@ cdvPluginPostBuildExtras.add({
     }
     println xwalkSpec
 
+	dependencies {
+		 compile fileTree(dir: 'libs', include: '*.jar')
+		 // SUB-PROJECT DEPENDENCIES START
+		 debugCompile(project(path: "CordovaLib", configuration: "debug"))
+		 releaseCompile(project(path: "CordovaLib", configuration: "release"))
+		 compile "com.android.support:support-v4:26.+"
+		 compile "com.android.support:appcompat-v7:26.+"
+		 // SUB-PROJECT DEPENDENCIES END
+	}
+
+	// ADDED THESE LINES (WORKS FOR ME)
+	configurations.all {     
+		 resolutionStrategy.force 'com.android.support:support-v4:26+'
+	}
+
+	 
     dependencies {
 	 
         implementation xwalkSpec
