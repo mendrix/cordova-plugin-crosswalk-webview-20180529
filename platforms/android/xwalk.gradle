@@ -158,17 +158,8 @@ cdvPluginPostBuildExtras.add({
     println xwalkSpec
 
     dependencies {
-	 debugCompile(project(path: "CordovaLib", configuration: "debug"))
-     releaseCompile(project(path: "CordovaLib", configuration: "release"))
-     compile "com.android.support:support-v4:26.+"
-     compile "com.android.support:appcompat-v7:26.+"
 	 
-     //  compile 'org.xwalk:xwalk_core_library:23.53.589.4' //xwalkSpec
-//        implementation 'org.xwalk:xwalk_core_library:22.52.561.4' //xwalkSpec
-//        implementation 'org.xwalk:xwalk_core_library:22.52.561.4' //xwalkSpec
-    }
-	configurations.all {     
-		 resolutionStrategy.force 'com.android.support:support-v4:26+'
+        implementation xwalkSpec
 	}
 
     if (file('assets/xwalk-command-line').exists()) {
